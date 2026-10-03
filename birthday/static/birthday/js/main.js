@@ -11,7 +11,7 @@ const SETTINGS = {
   // mis: "/static/birthday/photos/foto1.jpg")
  photos: [
     { src: "/static/birthday/photos/foto1.jpeg", caption: "foto di trio mall jaman sendal posee masih ada" },
-    { src: "/static/birthday/photos/foto2.jpeg", caption: "fotopas anniversary" },
+    { src: "/static/birthday/photos/foto2.jpeg", caption: "foto pas anniversary" },
     { src: "/static/birthday/photos/foto3.jpeg", caption: "foto di dlass before ayang kkn" },
     { src: "/static/birthday/photos/foto4.jpeg", caption: "foto kita pas masih piyik" },
     { src: "/static/birthday/photos/foto5.jpeg", caption: "foto ayang ultah tahun lalu" }
