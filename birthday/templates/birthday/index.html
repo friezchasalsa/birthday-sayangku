@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Iqbal's Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'birthday/css/style.css' %}">
+</head>
+<body>
+
+<div id="starfield"><canvas id="stars-canvas"></canvas></div>
+<div id="ambient-layer"></div>
+
+<!-- ============================= GATE (PASSWORD) ============================= -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-icon">🔒</div>
+    <h1>Ada Kejutan Buat Ayangdutttt</h1>
+    <p>Masukin password dulu tapi ya ay</p>
+    <input type="password" id="pw-input" maxlength="12" inputmode="numeric" placeholder="••••••" autocomplete="off">
+    <button id="pw-btn">Buka</button>
+    <div id="pw-error">Kobisa salah? lupa kah? ✨</div>
+    <div class="gate-hint">Tanya yang kirim link ini kalau lupa passwordnya 🤫</div>
+  </div>
+</div>
+
+<!-- ============================= ENVELOPE (INTRO) ============================= -->
+<div id="envelope-screen">
+  <div class="env-wrap" id="env-wrap">
+    <div class="envelope" id="envelope">
+      <div class="letter"></div>
+      <div class="env-body"></div>
+      <div class="flap"></div>
+      <div class="seal">🎂</div>
+    </div>
+    <h2>Ada surat buat ayang</h2>
+    <p>Pencet amplopnya buat buka</p>
+  </div>
+</div>
+
+<!-- ============================= MAIN CONTENT ============================= -->
+<div id="main-content">
+
+  <section id="hero">
+    <div class="eyebrow">Notes For You</div>
+    <h1 class="hero-title">Selamat Ulang Tahun<span class="name" id="heroName">Sayang</span></h1>
+    <p class="hero-sub" id="heroSub">Semoga hari ini secerah bintang yang menemani setiap malamnya ayanGg.</p>
+
+    <div class="moon-wrap" id="moonWrap">
+      <div class="moon"></div>
+      <div class="moon-hint">Pencet bulannya sayanggku</div>
+    </div>
+
+    <div class="scroll-cue">⌄</div>
+  </section>
+
+  <section id="slideshow" class="reveal">
+    <span class="section-eyebrow">Sorotan</span>
+    <h2 class="section-title">Momen-momen kita</h2>
+    <div class="slideshow-wrap" id="slideshowWrap">
+      <div class="slideshow-track" id="slideshowTrack">
+        <!-- Slide diisi otomatis lewat JS, lihat "PENGATURAN UTAMA" -->
+      </div>
+      <button class="slide-arrow slide-prev" id="slidePrev" aria-label="Sebelumnya">‹</button>
+      <button class="slide-arrow slide-next" id="slideNext" aria-label="Berikutnya">›</button>
+      <div class="slideshow-dots" id="slideshowDots"></div>
+    </div>
+  </section>
+
+  <section id="message" class="reveal">
+    <span class="section-eyebrow">Buat Ayang</span>
+    <h2 class="section-title">Sepucuk Pesan</h2>
+    <div class="message-card">
+      <p class="message-text" id="messageText"></p>
+      <div class="message-sign" id="messageSign">— Dengan sayang</div>
+    </div>
+  </section>
+
+  <section id="wish" class="reveal">
+    <span class="section-eyebrow">Waktunya</span>
+    <h2 class="section-title">Make a Wish</h2>
+    <div class="wish-hint">Tiup lilinnya pencet satu satu ya sayang</div>
+    <div class="cake" id="cake">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+    <button class="confetti-btn shine-btn" id="confettiBtn">YEYYY HAPPY BIRTHDAY SAYANGG🎉</button>
+  </section>
+
+  <footer>
+    dibuat dengan <span class="heart">♥</span> untukmu
+  </footer>
+
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script src="{% static 'birthday/js/main.js' %}"></script>
+
+</body>
+</html>
