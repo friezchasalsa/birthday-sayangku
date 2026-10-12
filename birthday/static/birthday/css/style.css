@@ -856,3 +856,62 @@ footer .heart{ color: #ff9d9d; }
   }
 
 }
+
+
+
+
+.video-modal {
+    display: none !important;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(35, 10, 25, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.video-modal.show {
+    display: flex !important;
+}
+
+#video-surprise {
+    width: 100%;
+    text-align: center;
+}
+
+#video-surprise .video-button {
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #e86a91, #ff9db8);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #e86a9140;
+}
+
+
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #e86a91, #ff9db8);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #e86a9140;
+}
+
+.music-toggle:hover {
+    transform: scale(1.05);
+}

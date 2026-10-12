@@ -110,13 +110,44 @@
     <button class="confetti-btn shine-btn" id="confettiBtn">YEYYY HAPPY BIRTHDAY SAYANGG🎉</button>
   </section>
 
-  <footer>
-    dibuat dengan <span class="heart">♥</span> untukmu
-  </footer>
+
+
+  <section id="video-surprise" class="reveal">
+    <span class="section-eyebrow">Kejutan Kecil 💗</span>
+    <h2 class="section-title">A Special Video For You</h2>
+    <p class="video-intro">Ada sesuatu yang pengin aku kasih liat ke ayang...</p>
+
+    <button id="openVideo" class="video-button">
+      💌 Pencet di sini, sayang
+    </button>
+
+    <div id="videoModal" class="video-modal">
+      <div class="video-card">
+        <button id="closeVideo" class="close-video" aria-label="Tutup video">
+          &times;
+        </button>
+
+        <h2>For You, Sayang 💗</h2>
+        <p>A little video, just for you ✨</p>
+
+        <video id="birthdayVideo" controls playsinline>
+          <source src="{% static 'birthday/videos/video.mp4' %}" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+      </div>
+    </div>
+  </section>
 
 </div>
 
 <canvas id="confetti-canvas"></canvas>
+
+
+<audio id="backgroundMusic" loop preload="auto">
+    <source src="{% static 'birthday/music/music.mp3' %}" type="audio/mpeg">
+</audio>
+
+
 
 <script src="{% static 'birthday/js/main.js' %}"></script>
 

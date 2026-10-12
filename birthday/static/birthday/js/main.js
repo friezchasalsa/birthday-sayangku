@@ -417,3 +417,73 @@ document.getElementById('messageSign').textContent = SETTINGS.signature;
 
   if(slides.length > 1) restart();
 })();
+
+
+
+
+
+/* ---------------- Video surprise + background music ---------------- */
+
+const openVideo = document.getElementById("openVideo");
+const closeVideo = document.getElementById("closeVideo");
+const videoModal = document.getElementById("videoModal");
+const birthdayVideo = document.getElementById("birthdayVideo");
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+let musicWanted = true;
+
+// Coba putar musik otomatis.
+// Browser mungkin menolak autoplay sampai ada interaksi pengguna.
+if (backgroundMusic) {
+    backgroundMusic.volume = 0.5;
+    backgroundMusic.play().catch(() => {});
+}
+
+function resumeBackgroundMusic() {
+    if (
+        backgroundMusic &&
+        musicWanted &&
+        (!videoModal || !videoModal.classList.contains("show"))
+    ) {
+        backgroundMusic.play().catch(() => {});
+    }
+}
+
+if (openVideo && closeVideo && videoModal && birthdayVideo) {
+    openVideo.addEventListener("click", () => {
+        videoModal.classList.add("show");
+
+        // Hentikan musik latar saat video dibuka.
+        if (backgroundMusic) {
+            backgroundMusic.pause();
+        }
+
+        birthdayVideo.currentTime = 0;
+        birthdayVideo.play().catch(() => {});
+    });
+
+    function closeBirthdayVideo() {
+        videoModal.classList.remove("show");
+        birthdayVideo.pause();
+        birthdayVideo.currentTime = 0;
+
+        // Putar kembali musik setelah video ditutup.
+        resumeBackgroundMusic();
+    }
+
+    closeVideo.addEventListener("click", closeBirthdayVideo);
+
+    videoModal.addEventListener("click", (event) => {
+        if (event.target === videoModal) {
+            closeBirthdayVideo();
+        }
+    });
+
+    // Tutup otomatis dan lanjutkan musik saat video selesai.
+    birthdayVideo.addEventListener("ended", closeBirthdayVideo);
+}
+
+// Coba lagi musik setelah interaksi pertama, jika autoplay diblokir.
+document.addEventListener("click", function startMusicAfterInteraction() {
+    resumeBackgroundMusic();
+}, { once: true });
